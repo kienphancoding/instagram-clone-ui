@@ -19,6 +19,7 @@
     border: 1px solid rgb(38, 38, 38);
     background-color: black;
     margin-bottom: 10px;
+    position: relative;
     .header {
       height: 56px;
       display: flex;
@@ -257,7 +258,7 @@
   .buttonStory {
     position: absolute;
     cursor: pointer;
-    z-index: 100;
+    z-index: 20;
     top: 33px;
     .iconStory {
       font-size: 25px;
@@ -294,6 +295,88 @@
         font-size: 12px;
         text-align: center;
       }
+    }
+  }
+}
+
+.detail {
+  position: absolute;
+  top: 56px;
+  // left: 18px;
+  // border: 1px solid #8a8a8a;
+  border-radius: 10px;
+  background-color: black;
+  .nickname {
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .headerDetail {
+    padding: 20px 20px;
+    display: flex;
+    justify-content: flex-start;
+    .avatar {
+      margin-right: 10px;
+      --radius: 50px;
+      width: var(--radius);
+      height: var(--radius);
+      border-radius: 100%;
+    }
+  }
+
+  .number,
+  .text {
+    display: flex;
+    justify-content: center;
+    // width: 100%;
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      --radius: 120px;
+      width: var(--radius);
+    }
+  }
+
+  .number p {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .text p {
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .image {
+    img {
+      --radius: 120px;
+      width: var(--radius);
+      height: var(--radius);
+      margin: 1px;
+    }
+  }
+
+  .menu {
+    padding: 10px 15px;
+    display: flex;
+    .message {
+      padding: 10px 30px;
+      background-color: rgb(0, 149, 246);
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+
+    .follow {
+      padding: 10px 30px;
+      background-color: white;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 10px;
+      color: black;
     }
   }
 }

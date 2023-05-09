@@ -11,6 +11,9 @@ import {
 
 const Home = () => {
   const [input, setInput] = useState("");
+  const [indexContent, setIndexContent] = useState(0);
+  const [isShow, setIsShow] = useState(false);
+
   const others = [
     "Giới thiệu",
     "Trợ giúp",
@@ -130,7 +133,15 @@ const Home = () => {
                   <div className={clsx(style.header)}>
                     <div className={clsx(style.title)}>
                       <div className={clsx(style.img)}>
-                        <img src={item.link_avatar} alt="Avatar" />
+                        <img
+                          src={item.link_avatar}
+                          alt="Avatar"
+                          onMouseOver={() => {
+                            setIndexContent(index);
+                            setIsShow(true);
+                          }}
+                          onMouseLeave={() => setIsShow(false)}
+                        />
                       </div>
                       <div className={clsx(style.name)}>{item.name}</div>
                     </div>
@@ -271,6 +282,43 @@ const Home = () => {
                       Đăng
                     </div>
                   </div>
+
+                  {/* --------------DETAIL---------------------- */}
+                  {isShow && indexContent === index && (
+                    <div className={clsx(style.detail)}>
+                      <div className={clsx(style.headerDetail)}>
+                        <img
+                          className={clsx(style.avatar)}
+                          src={item.link_avatar}
+                          alt="Anh"
+                        />
+                        <div className={clsx(style.info)}>
+                          <p className={clsx(style.nickname)}>{item.name}</p>
+                          <p className={clsx(style.name)}>{item.real_name}</p>
+                        </div>
+                      </div>
+
+                      <div className={clsx(style.number)}>
+                        <p>{item.post_count}</p>
+                        <p>{item.follower_count}</p>
+                        <p>{item.following_count}</p>
+                      </div>
+                      <div className={clsx(style.text)}>
+                        <p>bài viết</p>
+                        <p>người theo dõi</p>
+                        <p>đang theo dõi</p>
+                      </div>
+                      <div className={clsx(style.image)}>
+                        {item.list_image.map((i, y) => {
+                          return <img key={y} src={i} alt="Anh" />;
+                        })}
+                      </div>
+                      <div className={clsx(style.menu)}>
+                        <div className={clsx(style.message)}>Nhắn tin</div>
+                        <div className={clsx(style.follow)}>Đang theo dõi</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })}

@@ -3,33 +3,71 @@ const contents = [
     link_avatar:
       "https://i.pinimg.com/564x/25/3e/92/253e929fea282507922edb54fb8205b7.jpg",
     name: "kang.haerin",
+    real_name: "Kang Haerin",
     link_image:
       "https://i.pinimg.com/564x/20/c7/19/20c719e84930ddd29616e65a3a027346.jpg",
     like_count: "1.552.006",
+    following_count: "10",
+    follower_count: "1Tr",
+    post_count: "80",
+    list_image: [
+      "https://i.pinimg.com/564x/72/80/92/7280929b6b53351c17a700cdbb401d05.jpg",
+      "https://i.pinimg.com/564x/e3/e1/9c/e3e19c954acaa87683ced8916ec99fa4.jpg",
+      "https://i.pinimg.com/564x/bd/4c/18/bd4c185c83d972df96e3a2f01b329501.jpg",
+    ],
   },
   {
     link_avatar:
       "https://i.pinimg.com/564x/82/ef/51/82ef51c7bc64ef3000c641411d80a831.jpg",
     name: "hanni.pham",
+    real_name: "Hanni Pham",
+
     link_image:
       "https://i.pinimg.com/564x/f7/50/4e/f7504e50194b91f231084b94f289cce6.jpg",
     like_count: "6.102.004",
+    following_count: "12",
+    follower_count: "1,6Tr",
+    post_count: "50",
+    list_image: [
+      "https://i.pinimg.com/564x/bd/c2/5b/bdc25bc8a8c1ccc7ec7cad9690d890f5.jpg",
+      "https://i.pinimg.com/564x/89/82/79/89827949d3553b269c190a36a15e5f15.jpg",
+      "https://i.pinimg.com/564x/ab/64/a1/ab64a1895a2015656d2f68238388cc1d.jpg",
+    ],
   },
   {
     link_avatar:
       "https://i.pinimg.com/564x/be/df/3b/bedf3b0345beb982e07a14547ed3a43a.jpg",
     name: "leo_messi",
+    real_name: "Leo Messi",
+
     link_image:
       "https://i.pinimg.com/564x/6a/fc/f3/6afcf30558f3b517449b30ac66620a04.jpg",
     like_count: "111.111.111.111",
+    following_count: "70",
+    follower_count: "700Tr",
+    post_count: "1,1N",
+    list_image: [
+      "https://i.pinimg.com/564x/93/79/2c/93792c9917686d494ad5b732bfab7223.jpg",
+      "https://i.pinimg.com/564x/8c/b5/81/8cb5816a4279bc6bc315bf74c9a18b9c.jpg",
+      "https://i.pinimg.com/564x/2c/3f/42/2c3f4201e16a36645ee16edcad65b08f.jpg",
+    ],
   },
   {
     link_avatar:
       "https://i.pinimg.com/564x/fc/17/49/fc17493b5bdcfb358c79b48f7d6e90bd.jpg",
     name: "kevin.de.bruyne",
+    real_name: "Kevin De Bruyne",
     link_image:
       "https://i.pinimg.com/564x/5a/c0/9a/5ac09abf058b343f75473e09defd0a34.jpg",
     like_count: "171.717.171",
+    following_count: "26",
+    follower_count: "100Tr",
+    post_count: "800",
+    list_image: [
+      "https://i.pinimg.com/564x/25/3a/a2/253aa2d6d13029ac0886561dc88cd989.jpg",
+      "https://i.pinimg.com/736x/c1/5e/af/c15eaf0e3c2950e606759c5e3b702010.jpg",
+      "https://i.pinimg.com/564x/77/92/a7/7792a71ab930bf66185b4f7be231bf4e.jpg",
+    ],
   },
 ];
 const itemHints = [

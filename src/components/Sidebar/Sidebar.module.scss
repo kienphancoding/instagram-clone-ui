@@ -1,7 +1,7 @@
 .wrapper {
   height: 100vh;
   border-right: 1px solid rgb(38, 38, 38);
-  z-index: 3;
+  z-index: 100;
   position: fixed;
   width: var(--width-sidebar);
   background-color: var(--primary-color);
