@@ -12,6 +12,7 @@ import LogoCreate from "./Logo/LogoCreate.jsx";
 import LogoMenu from "./Logo/LogoMenu.jsx";
 import { useState } from "react";
 import Search from "./Search/Search";
+import Notification from "./Notification/Notification";
 
 const Sidebar = () => {
   const [isShow, setIsShow] = useState(false);
@@ -21,7 +22,7 @@ const Sidebar = () => {
 
   const list = [
     { type: "Link", link: "/", name: "Trang chủ", icon: LogoHome },
-    { type: "Toggle", name: "Tìm kiếm", icon: LogoSearch ,component:Search},
+    { type: "Toggle", name: "Tìm kiếm", icon: LogoSearch, component: Search },
     { type: "Link", link: "/explore", name: "Khám phá", icon: LogoExplore },
     { type: "Link", link: "/reels/video", name: "Reels", icon: LogoReels },
     {
@@ -30,7 +31,12 @@ const Sidebar = () => {
       name: "Tin nhắn",
       icon: LogoMessage,
     },
-    { type: "Toggle", name: "Thông báo", icon: LogoHeart },
+    {
+      type: "Toggle",
+      name: "Thông báo",
+      icon: LogoHeart,
+      component: Notification,
+    },
     { type: "Create", name: "Tạo", icon: LogoCreate },
     {
       type: "Link",
@@ -41,7 +47,7 @@ const Sidebar = () => {
     { type: "Menu", name: "Xem thêm", icon: LogoMenu },
   ];
 
-  let Toggle = list[indexShow].component
+  let Toggle = list[indexShow].component;
 
   return (
     <div className={clsx(style.wrapper)}>
@@ -158,8 +164,7 @@ const Sidebar = () => {
         }
       })}
 
-      {isShow && 
-         <Toggle/>}
+      {isShow && <Toggle />}
     </div>
   );
 };

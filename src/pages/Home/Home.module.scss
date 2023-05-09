@@ -1,6 +1,6 @@
 .wrapper {
   display: flex;
-  margin: 0 100px;
+  justify-content: center;
   color-scheme: dark;
 
   .content {
@@ -161,6 +161,7 @@
     .right {
       font-size: 12px;
       font-weight: 500;
+      color: rgb(0, 149, 246);
     }
   }
 
@@ -216,26 +217,82 @@
       .right {
         font-size: 12px;
         font-weight: 500;
+        color: rgba(0, 149, 246);
+        cursor: pointer;
       }
     }
   }
 
-  .footer{
+  .footer {
     font-size: 12px;
     color: #8a8a8a;
   }
 
-  .other{
+  .other {
     display: flex;
     flex-wrap: wrap;
     margin: 20px 0;
-    .itemOther{
+    .itemOther {
       cursor: pointer;
       margin-right: 10px;
       font-size: 12px;
       color: #8a8a8a;
-      &:hover{
+      &:hover {
         text-decoration: underline;
+      }
+    }
+  }
+}
+
+// .wrapStoryAndContent{
+//   width: 100%;
+// }
+
+.story {
+  --radius: 66px;
+  margin-top: 30px;
+  width: 470px;
+  max-width: 470px;
+  position: relative;
+  .buttonStory {
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+    top: 33px;
+    .iconStory {
+      font-size: 25px;
+    }
+  }
+  .leftStory {
+    left: 20px;
+  }
+
+  .rightStory {
+    right: 20px;
+  }
+
+  .listStory {
+    display: flex;
+    max-width: 470px;
+    width: 470px;
+    overflow: hidden;
+    .itemStory {
+      transition: all 0.3s ease;
+      padding: 10px;
+      .imgStory {
+        width: var(--radius);
+        height: var(--radius);
+        border-radius: 50%;
+      }
+
+      .nameStory {
+        max-width: var(--radius);
+        width: var(--radius);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 400;
+        font-size: 12px;
+        text-align: center;
       }
     }
   }
