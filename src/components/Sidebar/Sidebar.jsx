@@ -10,15 +10,19 @@ import LogoMessage from "./Logo/LogoMessage.jsx";
 import LogoHeart from "./Logo/LogoHeart.jsx";
 import LogoCreate from "./Logo/LogoCreate.jsx";
 import LogoMenu from "./Logo/LogoMenu.jsx";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Search from "./Search/Search";
 import Notification from "./Notification/Notification";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside.jsx";
 
 const Sidebar = () => {
   const [isShow, setIsShow] = useState(false);
   const [indexShow, setIndexShow] = useState(1);
   const [isShowMenu, setIsShowMenu] = useState(false);
   const [isShowCreate, setIsShowCreate] = useState(false);
+  const isShowRef = useRef();
+
+  useOnClickOutside(isShowRef, () => setIsShow(false));
 
   const list = [
     { type: "Link", link: "/", name: "Trang chủ", icon: LogoHome },
@@ -40,7 +44,7 @@ const Sidebar = () => {
     { type: "Create", name: "Tạo", icon: LogoCreate },
     {
       type: "Link",
-      link: "/kienphanit",
+      link: "/kienphancoding",
       name: "Trang cá nhân",
       img: "https://i.pinimg.com/736x/90/d0/b8/90d0b8471b7d4aaf9c3f84ac5992e1b8.jpg",
     },
@@ -164,7 +168,7 @@ const Sidebar = () => {
         }
       })}
 
-      {isShow && <Toggle />}
+      {isShow && <Toggle isShowRef={isShowRef} />}
     </div>
   );
 };

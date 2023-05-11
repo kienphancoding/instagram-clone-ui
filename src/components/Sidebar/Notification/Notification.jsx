@@ -1,12 +1,29 @@
 import clsx from "clsx";
-import style from "./Notification.module.scss"
+import style from "./Notification.module.scss";
 
-const Notification = () => {
-  return ( 
-    <div className={clsx(style.wrapper)}>
+const Notification = ({ isShowRef }) => {
+  return (
+    <div className={clsx(style.wrapper)} ref={isShowRef}>
+      <h1 className={clsx(style.title)}>Thông báo</h1>
 
+      <div className={clsx(style.loading)}>
+        <div className={clsx(style.spinner)}>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div>
-   );
-}
- 
+  );
+};
+
 export default Notification;

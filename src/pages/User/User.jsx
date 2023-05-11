@@ -3,42 +3,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import style from "./User.module.scss";
+import { users } from "../../User";
 
 const User = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const username = window.location.pathname.replace("/", "");
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "455e2c45edmshbf733020c7390ebp1e3526jsn1a1dc365378f",
-        "X-RapidAPI-Host": "instagram-bulk-profile-scrapper.p.rapidapi.com",
-      },
-    };
-
-    fetch(
-      `https://instagram-bulk-profile-scrapper.p.rapidapi.com/clients/api/ig/ig_profile?ig=${username}&response_type=short&corsEnabled=false`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setData(response[0]))
-      .catch((err) => console.error(err));
+    const dataUser = users.filter((item) => {
+      return item.nickname === username;
+    });
+    setData(dataUser[0]);
   }, [window.location.pathname]);
   return (
     <div className={clsx(style.wrapper)}>
       <div className={clsx(style.header)}>
         <div className={clsx(style.left)}>
           <div className={clsx(style.img)}>
-            <img src={data?.profile_pic_url} alt="Avatar" />
+            <img src={data?.avatar} alt="Avatar" />
           </div>
         </div>
 
         <div className={clsx(style.right)}>
           <div className={clsx(style.menu)}>
-            <p className={clsx(style.name)}>{data?.username}</p>
+            <p className={clsx(style.name)}>{data?.nickname}</p>
             <div className={clsx(style.wrapperIcon)}>
-              {data?.is_verified && (
+              {data?.isVerified && (
                 <FontAwesomeIcon
                   className={clsx(style.icon)}
                   icon={faCircleCheck}
@@ -78,26 +68,22 @@ const User = () => {
           </div>
           <div className={clsx(style.statics)}>
             <div className={clsx(style.text)}>
-              <span>{data?.media_count}</span> bài viết
+              <span>{data?.posts?.length}</span> bài viết
             </div>
             <div className={clsx(style.text)}>
-              <span>
-                {data?.follower_count > 1000000
-                  ? Math.floor(data?.follower_count / 1000000) + " Tr"
-                  : data?.follower_count}
-              </span>{" "}
+              <span>{data?.follower_count} </span>
               người theo dõi
             </div>
             <div className={clsx(style.text)}>
               Đang theo dõi <span>{data?.following_count}</span> người dùng
             </div>
           </div>
-          <div className={clsx(style.realname)}>{data?.full_name}</div>
-          {data?.biography && (
-            <div className={clsx(style.description)}>{data?.biography}</div>
+          <div className={clsx(style.realname)}>{data?.name}</div>
+          {data?.description && (
+            <div className={clsx(style.description)}>{data?.description}</div>
           )}
-          {data?.external_url && (
-            <div className={clsx(style.external)}>{data?.external_url}</div>
+          {data?.website && (
+            <a href={data?.website} target="_blank" className={clsx(style.external)}>{data?.website}</a>
           )}
         </div>
       </div>

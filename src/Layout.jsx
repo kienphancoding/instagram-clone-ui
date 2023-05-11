@@ -3,7 +3,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import style from "./Layout.module.scss";
 
 const Layout = ({ children }) => {
-  console.clear();
+  // console.clear();
   return (
     <div className={clsx(style.container)}>
       <Sidebar />
