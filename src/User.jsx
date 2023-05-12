@@ -384,6 +384,34 @@ const users = [
       },
     ],
   },
+  {
+    name: "Man City",
+    nickname: "manchestercity",
+    avatar:
+      "https://i.pinimg.com/564x/09/22/a4/0922a4f6f8f86900f05a99ed29fd6f86.jpg",
+    follower_count: "330M",
+    following_count: "0",
+    description: "Etihad",
+    isVerified: true,
+    website: "https://www.instagram.com/mancity/",
+    posts: [
+      {
+        img: "https://i.pinimg.com/564x/37/e3/e4/37e3e42e369431f844cd288d8181b10f.jpg",
+        like_count: "1M",
+        comment_count: "1K",
+      },
+      {
+        img: "https://i.pinimg.com/564x/29/a7/f8/29a7f85677c8babc22b259cd1dbc75da.jpg",
+        like_count: "13K",
+        comment_count: "156",
+      },
+      {
+        img: "https://i.pinimg.com/564x/ca/1d/18/ca1d18570411a7eabab85ac71790a3b9.jpg",
+        like_count: "200K",
+        comment_count: "1,2K",
+      },
+    ],
+  },
 ];
 
 let posts = users.map((item) => {
