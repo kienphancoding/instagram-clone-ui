@@ -6,7 +6,7 @@ import { users } from "../../../User";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
-const Search = ({ isShowRef }) => {
+const Search = ({ setName, setIsShow, isShowRef }) => {
   const [input, setInput] = useState("");
   const [data, setData] = useState([]);
 
@@ -41,6 +41,10 @@ const Search = ({ isShowRef }) => {
               <Link
                 key={index}
                 to={`/${item?.nickname}`}
+                onClick={() => {
+                  setName(item?.nickname);
+                  setIsShow(false);
+                }}
                 className={clsx(style.searchItem)}
               >
                 <div className={clsx(style.wrapperImage)}>

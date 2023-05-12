@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import style from "./PageNotFound.module.scss";
+import style from "./Stories.module.scss";
 
-const PageNotFound = () => {
+const Stories = () => {
   return (
     <div className={clsx(style.wrapper)}>
       <div className={clsx(style.loading)}>
@@ -18,4 +18,4 @@ const PageNotFound = () => {
   );
 };
 
-export default PageNotFound;
+export default Stories;

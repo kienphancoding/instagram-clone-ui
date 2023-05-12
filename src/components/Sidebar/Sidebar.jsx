@@ -15,7 +15,7 @@ import Search from "./Search/Search";
 import Notification from "./Notification/Notification";
 import { useOnClickOutside } from "../../hooks/useOnClickOutside.jsx";
 
-const Sidebar = () => {
+const Sidebar = ({ setName }) => {
   const [isShow, setIsShow] = useState(false);
   const [indexShow, setIndexShow] = useState(1);
   const [isShowMenu, setIsShowMenu] = useState(false);
@@ -28,7 +28,7 @@ const Sidebar = () => {
     { type: "Link", link: "/", name: "Trang chủ", icon: LogoHome },
     { type: "Toggle", name: "Tìm kiếm", icon: LogoSearch, component: Search },
     { type: "Link", link: "/explore", name: "Khám phá", icon: LogoExplore },
-    { type: "Link", link: "/reels/video", name: "Reels", icon: LogoReels },
+    { type: "Link", link: "/reels", name: "Reels", icon: LogoReels },
     {
       type: "Link",
       link: "/direct/inbox",
@@ -168,7 +168,9 @@ const Sidebar = () => {
         }
       })}
 
-      {isShow && <Toggle isShowRef={isShowRef} />}
+      {isShow && (
+        <Toggle setName={setName} setIsShow={setIsShow} isShowRef={isShowRef} />
+      )}
     </div>
   );
 };
