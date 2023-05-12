@@ -8,6 +8,7 @@ import {
   faCircleArrowLeft,
   faCircleArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { posts } from "../../User";
 
 const Home = () => {
   const [input, setInput] = useState("");
@@ -126,15 +127,18 @@ const Home = () => {
         {/* ---------------CONTENT------------------ */}
         <div className={clsx(style.content)}>
           <div className={clsx(style.list)}>
-            {contents.map((item, index) => {
+            {posts.map((item, index) => {
               return (
                 <div className={clsx(style.item)} key={index}>
                   {/* -----------------Header----------------- */}
                   <div className={clsx(style.header)}>
                     <div className={clsx(style.title)}>
-                      <div className={clsx(style.img)}>
+                      <Link
+                        to={`/${item.nickname}`}
+                        className={clsx(style.img)}
+                      >
                         <img
-                          src={item.link_avatar}
+                          src={item.avatar}
                           alt="Avatar"
                           onMouseOver={() => {
                             setIndexContent(index);
@@ -142,8 +146,13 @@ const Home = () => {
                           }}
                           onMouseLeave={() => setIsShow(false)}
                         />
-                      </div>
-                      <div className={clsx(style.name)}>{item.name}</div>
+                      </Link>
+                      <Link
+                        to={`${item.nickname}`}
+                        className={clsx(style.name)}
+                      >
+                        {item.nickname}
+                      </Link>
                     </div>
                     <div className={clsx(style.menu)}>
                       <svg
@@ -165,7 +174,7 @@ const Home = () => {
 
                   {/* --------------------Image-------------------- */}
                   <div className={clsx(style.imageContent)}>
-                    <img src={item.link_image} alt="Content" />
+                    <img src={item.posts.img} alt="Content" />
                   </div>
 
                   {/* --------------------Tools---------------------- */}
@@ -262,7 +271,7 @@ const Home = () => {
                   </div>
 
                   <div className={clsx(style.like)}>
-                    {item.like_count} lượt thích
+                    {item.posts.like_count} lượt thích
                   </div>
                   <div className={clsx(style.comment)}>
                     <input
@@ -289,12 +298,14 @@ const Home = () => {
                       <div className={clsx(style.headerDetail)}>
                         <img
                           className={clsx(style.avatar)}
-                          src={item.link_avatar}
+                          src={item.avatar}
                           alt="Anh"
                         />
                         <div className={clsx(style.info)}>
-                          <p className={clsx(style.nickname)}>{item.name}</p>
-                          <p className={clsx(style.name)}>{item.real_name}</p>
+                          <p className={clsx(style.nickname)}>
+                            {item.nickname}
+                          </p>
+                          <p className={clsx(style.name)}>{item.name}</p>
                         </div>
                       </div>
 
@@ -310,7 +321,7 @@ const Home = () => {
                       </div>
                       <div className={clsx(style.image)}>
                         {item.list_image.map((i, y) => {
-                          return <img key={y} src={i} alt="Anh" />;
+                          return <img key={y} src={i.img} alt="Anh" />;
                         })}
                       </div>
                       <div className={clsx(style.menu)}>

@@ -46,7 +46,7 @@ const Sidebar = ({ setName }) => {
       type: "Link",
       link: "/kienphancoding",
       name: "Trang cá nhân",
-      img: "https://i.pinimg.com/736x/90/d0/b8/90d0b8471b7d4aaf9c3f84ac5992e1b8.jpg",
+      img: "https://i.pinimg.com/564x/25/0f/d7/250fd7d90bcb46b73ec95dc5cbb116be.jpg",
     },
     { type: "Menu", name: "Xem thêm", icon: LogoMenu },
   ];
